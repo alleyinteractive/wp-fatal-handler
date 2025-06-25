@@ -1,16 +1,16 @@
 <?php
 /**
- * Create WordPress Plugin Tests: Base Test Class
+ * WP Fatal Error Handler Tests: Base Test Class
  *
- * @package create-wordpress-plugin
+ * @package wp-fatal-handler
  */
 
-namespace Alley\WP\Create_WordPress_Plugin\Tests;
+namespace Alley\WP\WP_Fatal_Error_Handler\Tests;
 
 use Mantle\Testkit\Test_Case as TestkitTest_Case;
 
 /**
- * Create WordPress Plugin Base Test Case
+ * WP Fatal Error Handler Base Test Case
  */
 abstract class TestCase extends TestkitTest_Case {
 

@@ -1,17 +1,17 @@
 {
-    "name": "alleyinteractive/create-wordpress-plugin",
-    "description": "A skeleton WordPress plugin",
+    "name": "alleyinteractive/wp-fatal-handler",
+    "description": "A better fatal error handler for WordPress.",
     "type": "wordpress-plugin",
     "keywords": [
         "alleyinteractive",
-        "create-wordpress-plugin"
+        "wp-fatal-handler"
     ],
-    "homepage": "https://github.com/alleyinteractive/create-wordpress-plugin",
+    "homepage": "https://github.com/alleyinteractive/wp-fatal-handler",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
-            "name": "author_name",
-            "email": "email@domain.com"
+            "name": "Sean Fisher",
+            "email": "sean@alley.com"
         }
     ],
     "require": {
@@ -35,13 +35,13 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Alley\\WP\\Create_WordPress_Plugin\\Tests\\": "tests"
+            "Alley\\WP\\WP_Fatal_Error_Handler\\Tests\\": "tests"
         }
     },
     "extra": {
         "wordpress-autoloader": {
             "autoload": {
-                "Alley\\WP\\Create_WordPress_Plugin\\": "src"
+                "Alley\\WP\\WP_Fatal_Error_Handler\\": "src"
             }
         }
     },

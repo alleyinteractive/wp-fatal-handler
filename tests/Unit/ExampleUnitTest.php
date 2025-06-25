@@ -1,11 +1,11 @@
 <?php
 /**
- * Create WordPress Plugin Tests: Example Unit Test
+ * WP Fatal Error Handler Tests: Example Unit Test
  *
- * @package create-wordpress-plugin
+ * @package wp-fatal-handler
  */
 
-namespace Alley\WP\Create_WordPress_Plugin\Tests\Unit;
+namespace Alley\WP\WP_Fatal_Error_Handler\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 

@@ -1,13 +1,13 @@
 <?php
 /**
- * Create WordPress Plugin Tests: Example Feature Test
+ * WP Fatal Error Handler Tests: Example Feature Test
  *
- * @package create-wordpress-plugin
+ * @package wp-fatal-handler
  */
 
-namespace Alley\WP\Create_WordPress_Plugin\Tests\Feature;
+namespace Alley\WP\WP_Fatal_Error_Handler\Tests\Feature;
 
-use Alley\WP\Create_WordPress_Plugin\Tests\TestCase;
+use Alley\WP\WP_Fatal_Error_Handler\Tests\TestCase;
 
 /**
  * A test suite for an example feature.

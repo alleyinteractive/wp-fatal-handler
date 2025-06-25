@@ -51,7 +51,7 @@ This is a port of the infamous WordPress `hello.php` plugin to a feature. The ly
  * @package Create_WordPress_Plugin
  */
 
-namespace Alley\WP\Create_WordPress_Plugin\Features;
+namespace Alley\WP\WP_Fatal_Error_Handler\Features;
 
 use Alley\WP\Types\Feature;
 
