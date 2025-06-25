@@ -30,12 +30,19 @@ function main(): void {
 		default => new PrettyPageHandler(),
 	};
 
+	/**
+	 * Filter the Whoops handler before it is registered.
+	 *
+	 * This allows you to replace the default handler with a custom one.
+	 *
+	 * @param \Whoops\Handler\Handler $handler The Whoops handler.
+	 */
 	$handler = apply_filters( 'wp_fatal_handler_whoops_handler', $handler );
 
 	// If the handler is not an instance of Handler, default to
 	// PrettyPageHandler. To unregister whoops error handling, use the
 	// `wp_fatal_handler_whoops` filter to return `null`.
-	if ( ! $handler instanceof Handler ) {
+	if ( ! $handler instanceof Handler ) { // @phpstan-ignore-line instanceof.alwaysTrue
 		$handler = new PrettyPageHandler();
 	}
 
