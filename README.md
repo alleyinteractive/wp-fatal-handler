@@ -16,7 +16,21 @@ License: GPL v2 or later
 
 [![Testing Suite](https://github.com/alleyinteractive/wp-fatal-handler/actions/workflows/all-pr-tests.yml/badge.svg)](https://github.com/alleyinteractive/wp-fatal-handler/actions/workflows/all-pr-tests.yml)
 
-A better fatal error handler for WordPress..
+A better fatal error handler for WordPress powered by
+[Whoops](https://github.com/filp/whoops).
+
+![Screenshot of plugin](./screenshots/screenshot.png)
+
+Out of the box, WordPress' error handling isn't very helpful when it comes to
+fatal errors.
+
+![Screenshot of core](./screenshots/core-error.png)
+
+This plugin replaces the default WordPress fatal error handler with a Whoops
+error handler, which provides a much more useful error page with stack traces,
+code snippets, and more. It also provides a JSON response for API requests. The
+Whoops handler will only be applied to fatal errors where `WP_DEBUG` is set to
+`true.
 
 ## Installation
 
@@ -28,42 +42,25 @@ composer require alleyinteractive/wp-fatal-handler
 
 ## Usage
 
-Activate the plugin in WordPress and use it like so:
+Activate the plugin in WordPress and it will automatically register the Whoops
+error handler for fatal errors. It is recommended to load this plugin as early
+as possible (perhaps in `mu-plugins`), so that it can catch all fatal errors
+that occur during the WordPress bootstrap process.
+
+## Configuration
+
+By default the plugin will register the Whoops error handler and only handle
+fatal errors (where core usually displays `There has been a critical error on
+this website.` ).
+
+To disable the registration of the error handler, you can use the
+`wp_fatal_handler_register` filter:
 
 ```php
-$plugin = Create_WordPress_Plugin\WP_Fatal_Error_Handler\WP_Fatal_Error_Handler();
-$plugin->perform_magic();
+add_filter( 'wp_fatal_handler_register', '__return_false' );
 ```
 
-
-## Releasing the Plugin
-
-The plugin uses
-[action-release](https://github.com/alleyinteractive/action-release) via a
-[built release workflow](./.github/workflows/built-release.yml) to compile and
-tag releases. Whenever a new version is detected in the root plugin's headers in
-the `wp-fatal-handler.php` file or in the `composer.json` file, the workflow will
-automatically build the plugin and tag it with a new version. The built tag will
-contain all the required front-end assets the plugin may require. This works
-well for publishing to WordPress.org or for submodule-ing.
-
-When you are ready to release a new version of the plugin, you can run
-`npm run release`/`composer release` to start the process of setting up a new
-release. If you want to do this manually you can follow these steps:
-
-1. Change the `Version` in the `wp-fatal-handler.php` file to a new higher-level version.
-
-	```diff
-	- * Version: 0.0.0
-	+ * Version: 0.0.1
-	```
-
-	**✨ `npm run release` will do this for you automatically.**
-
-2. Commit your changes and push to the repository.
-3. Check the actions tab in the repository to see the progress of the release.
-   The action will automatically create a new tag and release for the plugin.
-   You are done!
+**Note:** this filter should be applied before the plugin is loaded.
 
 ## Changelog
 
@@ -73,9 +70,9 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 This project is actively maintained by [Alley
 Interactive](https://github.com/alleyinteractive). Like what you see? [Come work
-with us](https://alley.co/careers/).
+with us](https://alley.com/careers/).
 
-- [Sean Fisher](https://github.com/Sean Fisher)
+- [Sean Fisher](https://github.com/srtfisher)
 - [All Contributors](../../contributors)
 
 ## License
