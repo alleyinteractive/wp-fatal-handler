@@ -44,7 +44,7 @@ if ( ! file_exists( __DIR__ . '/vendor/wordpress-autoload.php' ) ) {
 
 		return;
 	}
-} else {
+} elseif ( ! class_exists( \Whoops\Run::class ) ) {
 	// Load Composer dependencies.
 	require_once __DIR__ . '/vendor/wordpress-autoload.php';
 }
