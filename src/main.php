@@ -22,9 +22,10 @@ function main(): void {
 	}
 
 	$handler = match ( true ) {
-		str_contains( $_SERVER['REQUEST_URI'] ?? '', '/wp-json/' ) => new JsonResponseHandler(),
-		// Check if the request expects JSON.
-		str_contains( $_SERVER['HTTP_ACCEPT'] ?? '', '/json' ) => new JsonResponseHandler(),
+		// @phpstan-ignore-next-line argument.type
+		str_contains( $_SERVER['REQUEST_URI'] ?? '', '/wp-json/' ) => new JsonResponseHandler(),  // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		// @phpstan-ignore-next-line argument.type
+		str_contains( $_SERVER['HTTP_ACCEPT'] ?? '', '/json' ) => new JsonResponseHandler(), // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		defined( 'WP_CLI' ) && WP_CLI => new PlainTextHandler(),
 		default => new PrettyPageHandler(),
 	};
@@ -38,7 +39,14 @@ function main(): void {
 		$handler = new PrettyPageHandler();
 	}
 
-	$whoops  = new Whoops();
+	// Add some CSS to the PrettyPageHandler.
+	if ( $handler instanceof PrettyPageHandler ) {
+		$handler->setPageTitle( 'Fatal WordPress Error' );
+		$handler->addResourcePath( dirname( __DIR__ ) . '/css' );
+		$handler->addCustomCss( 'whoops.css' );
+	}
+
+	$whoops = new Whoops();
 	$whoops->pushHandler( $handler );
 
 	// Ignore non-fatal errors (warnings, notices, etc.).
@@ -55,7 +63,7 @@ function main(): void {
 	 */
 	$whoops = apply_filters( 'wp_fatal_handler_whoops', $whoops );
 
-	if ( $whoops instanceof Whoops ) {
+	if ( $whoops instanceof Whoops ) { // @phpstan-ignore-line instanceof.alwaysTrue
 		$whoops->register();
 	}
 }
@@ -67,8 +75,6 @@ function main(): void {
  * and if the environment is set to 'local' in the `VIP_GO_APP_ENVIRONMENT
  * constant`. It also allows for filtering the registration
  * through the `wp_fatal_handler_register` filter.
- *
- * @return bool
  */
 function should_register_handler(): bool {
 	if ( ! defined( 'WP_DEBUG' ) || ! WP_DEBUG ) {
