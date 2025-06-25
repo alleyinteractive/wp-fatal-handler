@@ -84,13 +84,18 @@ function main(): void {
  * through the `wp_fatal_handler_register` filter.
  */
 function should_register_handler(): bool {
+	$should_run = true;
+
 	if ( ! defined( 'WP_DEBUG' ) || ! WP_DEBUG ) {
-		return false;
+		$should_run = false;
 	}
 
 	if ( defined( 'VIP_GO_APP_ENVIRONMENT' ) && 'local' !== VIP_GO_APP_ENVIRONMENT ) {
-		return false;
+		$should_run = false;
 	}
 
-	return (bool) apply_filters( 'wp_fatal_handler_register', true );
+	/**
+	 * Filter to determine whether the fatal error handler should be registered.
+	 */
+	return (bool) apply_filters( 'wp_fatal_handler_register', $should_run );
 }
