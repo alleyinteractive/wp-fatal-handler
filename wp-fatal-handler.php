@@ -3,15 +3,12 @@
  * Plugin Name: WP Fatal Error Handler
  * Plugin URI: https://github.com/alleyinteractive/wp-fatal-handler
  * Description: A better fatal error handler for WordPress.
- * Version: 0.0.0
+ * Version: 0.1.0
  * Author: Sean Fisher
  * Author URI: https://github.com/alleyinteractive/wp-fatal-handler
  * Requires at least: 5.9
  * Requires PHP: 8.2
  * Tested up to: 6.7
- *
- * Text Domain: wp-fatal-handler
- * Domain Path: /languages/
  *
  * @package wp-fatal-handler
  */
@@ -47,16 +44,12 @@ if ( ! file_exists( __DIR__ . '/vendor/wordpress-autoload.php' ) ) {
 
 		return;
 	}
-} else {
+} elseif ( ! class_exists( \Whoops\Run::class ) ) {
 	// Load Composer dependencies.
 	require_once __DIR__ . '/vendor/wordpress-autoload.php';
 }
 
 // Load the plugin's main files.
-require_once __DIR__ . '/src/meta.php';
 require_once __DIR__ . '/src/main.php';
 
-load_scripts();
-register_post_meta_from_defs();
-register_term_meta_from_defs();
 main();

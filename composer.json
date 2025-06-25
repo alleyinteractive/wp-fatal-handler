@@ -17,7 +17,8 @@
     "require": {
         "php": "^8.2",
         "alleyinteractive/composer-wordpress-autoloader": "^1.0",
-        "alleyinteractive/wp-type-extensions": "^4.0"
+        "filp/whoops": "^2.18",
+        "symfony/var-dumper": "^7.3"
     },
     "require-dev": {
         "alleyinteractive/alley-coding-standards": "^2.0",
@@ -65,8 +66,7 @@
         "rector": "rector process --dry-run",
         "release": "npx @alleyinteractive/create-release@latest",
         "test": [
-            "@phpcs",
-            "@phpstan",
+            "@lint",
             "@phpunit"
         ]
     }
