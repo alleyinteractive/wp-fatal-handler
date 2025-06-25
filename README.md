@@ -21,7 +21,7 @@ A better fatal error handler for WordPress powered by
 
 ![Screenshot of plugin](./screenshots/screenshot.png)
 
-Out of the box, WordPress' error handling isn't very helpful when it comes to
+By default, WordPress' error handling provides limited information when dealing with
 fatal errors.
 
 ![Screenshot of core](./screenshots/core-error.png)
