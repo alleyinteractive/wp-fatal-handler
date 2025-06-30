@@ -3,7 +3,7 @@
  * Plugin Name: WP Fatal Error Handler
  * Plugin URI: https://github.com/alleyinteractive/wp-fatal-handler
  * Description: A better fatal error handler for WordPress.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Author: Sean Fisher
  * Author URI: https://github.com/alleyinteractive/wp-fatal-handler
  * Requires at least: 5.9
