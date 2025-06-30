@@ -3,7 +3,7 @@
  * Plugin Name: WP Fatal Error Handler
  * Plugin URI: https://github.com/alleyinteractive/wp-fatal-handler
  * Description: A better fatal error handler for WordPress.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Author: Sean Fisher
  * Author URI: https://github.com/alleyinteractive/wp-fatal-handler
  * Requires at least: 5.9
@@ -18,11 +18,6 @@ namespace Alley\WP\WP_Fatal_Error_Handler;
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
-/**
- * Root directory to this plugin.
- */
-define( 'WP_FATAL_HANDLER_DIR', __DIR__ );
 
 // Check if Composer is installed (remove if Composer is not required for your plugin).
 if ( ! file_exists( __DIR__ . '/vendor/wordpress-autoload.php' ) ) {
