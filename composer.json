@@ -1,73 +1,61 @@
 {
-    "name": "alleyinteractive/wp-fatal-handler",
-    "description": "A better fatal error handler for WordPress.",
-    "type": "wordpress-plugin",
-    "keywords": [
-        "alleyinteractive",
-        "wp-fatal-handler"
-    ],
-    "homepage": "https://github.com/alleyinteractive/wp-fatal-handler",
-    "license": "GPL-2.0-or-later",
-    "authors": [
-        {
-            "name": "Sean Fisher",
-            "email": "sean@alley.com"
-        }
-    ],
-    "require": {
-        "php": "^8.2",
-        "alleyinteractive/composer-wordpress-autoloader": "^1.0",
-        "filp/whoops": "^2.18",
-        "symfony/var-dumper": "^7.3"
-    },
-    "require-dev": {
-        "alleyinteractive/alley-coding-standards": "^2.0",
-        "mantle-framework/testkit": "^1.4",
-        "rector/rector": "^2.0",
-        "szepeviktor/phpstan-wordpress": "^2.0"
-    },
-    "config": {
-        "allow-plugins": {
-            "alleyinteractive/composer-wordpress-autoloader": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "pestphp/pest-plugin": true
-        },
-        "sort-packages": true
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Alley\\WP\\WP_Fatal_Error_Handler\\Tests\\": "tests"
-        }
-    },
-    "extra": {
-        "wordpress-autoloader": {
-            "autoload": {
-                "Alley\\WP\\WP_Fatal_Error_Handler\\": "src"
-            }
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "scripts": {
-        "phpcbf": "phpcbf .",
-        "phpcs": "phpcs .",
-        "phpstan": "phpstan --memory-limit=512M",
-        "lint": [
-            "@phpcs",
-            "@phpstan",
-            "@rector"
-        ],
-        "lint:fix": [
-          "@rector:fix",
-          "@phpcbf"
-        ],
-        "phpunit": "phpunit",
-        "rector:fix": "rector process",
-        "rector": "rector process --dry-run",
-        "release": "npx @alleyinteractive/create-release@latest",
-        "test": [
-            "@lint",
-            "@phpunit"
-        ]
+  "name": "alleyinteractive/wp-fatal-handler",
+  "description": "A better fatal error handler for WordPress.",
+  "type": "wordpress-plugin",
+  "keywords": [
+    "alleyinteractive",
+    "wp-fatal-handler"
+  ],
+  "homepage": "https://github.com/alleyinteractive/wp-fatal-handler",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Sean Fisher",
+      "email": "sean@alley.com"
     }
+  ],
+  "config": {
+    "allow-plugins": {
+      "alleyinteractive/composer-wordpress-autoloader": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "pestphp/pest-plugin": true
+    },
+    "sort-packages": true
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Alley\\WP\\WP_Fatal_Error_Handler\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "wordpress-autoloader": {
+      "autoload": {
+        "Alley\\WP\\WP_Fatal_Error_Handler\\": "src"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "phpcbf": "phpcbf .",
+    "phpcs": "phpcs .",
+    "phpstan": "phpstan --memory-limit=512M",
+    "lint": [
+      "@phpcs",
+      "@phpstan",
+      "@rector"
+    ],
+    "lint:fix": [
+      "@rector:fix",
+      "@phpcbf"
+    ],
+    "phpunit": "phpunit",
+    "rector:fix": "rector process",
+    "rector": "rector process --dry-run",
+    "release": "npx @alleyinteractive/create-release@latest",
+    "test": [
+      "@lint",
+      "@phpunit"
+    ]
+  }
 }
