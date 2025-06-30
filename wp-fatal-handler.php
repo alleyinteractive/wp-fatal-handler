@@ -19,11 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/**
- * Root directory to this plugin.
- */
-define( 'WP_FATAL_HANDLER_DIR', __DIR__ );
-
 // Check if Composer is installed (remove if Composer is not required for your plugin).
 if ( ! file_exists( __DIR__ . '/vendor/wordpress-autoload.php' ) ) {
 	// Will also check for the presence of an already loaded Composer autoloader
