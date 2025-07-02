@@ -62,6 +62,16 @@ add_filter( 'wp_fatal_handler_register', '__return_false' );
 
 **Note:** this filter should be applied before the plugin is loaded.
 
+## Conflict with Query Monitor
+
+By default Query Monitor will handle fatal errors which will prevent this plugin
+from displaying its error page. To allow this plugin to handle fatal errors, you
+can disable Query Monitor's error handling by using the following code:
+
+```php
+define( 'QM_DISABLE_ERROR_HANDLER', true );
+```
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
