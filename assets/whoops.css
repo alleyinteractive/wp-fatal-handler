@@ -24,6 +24,7 @@ body {
   height: 20px !important;
   width: 20px !important;
 }
+
 .search-for-help li a:hover svg {
   fill: var(--color-error) !important;
 }
