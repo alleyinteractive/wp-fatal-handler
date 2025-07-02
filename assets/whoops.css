@@ -1,0 +1,30 @@
+:root {
+  --color-error: #e95353;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.rightButton {
+  border: 1px solid white;
+  box-shadow: none;
+  color: white;
+  font-size: 18px;
+}
+
+.rightButton:hover {
+  background-color: var(--color-error);
+  border-color: var(--color-error);
+  box-shadow: none;
+  color: white
+}
+
+.search-for-help li a svg {
+  height: 20px !important;
+  width: 20px !important;
+}
+
+.search-for-help li a:hover svg {
+  fill: var(--color-error) !important;
+}
