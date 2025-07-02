@@ -49,7 +49,7 @@ function main(): void {
 	// Add some CSS to the PrettyPageHandler.
 	if ( $handler instanceof PrettyPageHandler ) {
 		$handler->setPageTitle( 'Fatal WordPress Error' );
-		$handler->addResourcePath( dirname( __DIR__ ) . '/css' );
+		$handler->addResourcePath( dirname( __DIR__ ) . '/assets' );
 		$handler->addCustomCss( 'whoops.css' );
 	}
 
