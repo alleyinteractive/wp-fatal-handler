@@ -103,6 +103,15 @@ function should_register_handler(): bool {
 		$should_run = false;
 	}
 
+	// Disable the handler if running tests.
+	if ( defined( 'MANTLE_IS_TESTING' ) && MANTLE_IS_TESTING ) {
+		$should_run = false;
+	}
+
+	if ( defined( 'WP_RUN_CORE_TESTS' ) && WP_RUN_CORE_TESTS ) {
+		$should_run = false;
+	}
+
 	/**
 	 * Filter to determine whether the fatal error handler should be registered.
 	 */
