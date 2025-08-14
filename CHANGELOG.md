@@ -2,6 +2,10 @@
 
 All notable changes to `WP Fatal Error Handler` will be documented in this file.
 
+## 0.1.3
+
+- Disable the error handler when running tests.
+
 ## 0.1.2
 
 - Fix styling of "hide" button.

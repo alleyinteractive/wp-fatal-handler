@@ -4,7 +4,7 @@ Contributors: alleyinteractive
 
 Tags: alleyinteractive, wp-fatal-handler
 
-Stable tag: 0.1.2
+Stable tag: 0.1.3
 
 Requires at least: 6.3
 
