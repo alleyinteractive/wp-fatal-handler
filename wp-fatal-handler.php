@@ -8,7 +8,7 @@
  * Author URI: https://github.com/alleyinteractive/wp-fatal-handler
  * Requires at least: 5.9
  * Requires PHP: 8.2
- * Tested up to: 6.7
+ * Tested up to: 6.9
  *
  * @package wp-fatal-handler
  */
