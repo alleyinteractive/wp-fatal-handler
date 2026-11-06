@@ -49,7 +49,7 @@ function main(): void {
 	// Add some CSS to the PrettyPageHandler.
 	if ( $handler instanceof PrettyPageHandler ) {
 		$handler->setPageTitle( 'Fatal WordPress Error' );
-		$handler->addResourcePath( dirname( __DIR__ ) . '/assets' );
+		$handler->addResourcePath( __DIR__ . '/../assets' );
 		$handler->addCustomCss( 'whoops.css' );
 		$handler->addCustomJs( 'whoops.js' );
 	}
@@ -63,14 +63,6 @@ function main(): void {
 		'/^' . preg_quote( ABSPATH, '/' ) . '.*/',
 		E_WARNING | E_NOTICE | E_DEPRECATED | E_USER_DEPRECATED | E_USER_WARNING | E_USER_ERROR | E_USER_NOTICE,
 	);
-
-	// Ignore E_STRICT in PHP <= 8.3 since it is deprecated in 8.4.
-	if ( version_compare( PHP_VERSION, '8.4', '<' ) ) {
-		$whoops->silenceErrorsInPaths(
-			'/^' . preg_quote( ABSPATH, '/' ) . '.*/',
-			E_STRICT,
-		);
-	}
 
 	/**
 	 * Filter the Whoops instance before it is registered.
