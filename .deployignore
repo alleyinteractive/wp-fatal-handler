@@ -16,9 +16,9 @@ Dockerfile
 Makefile
 node_modules/
 output.log
+phpstan.neon
 phpunit.xml
-phpunit.xml
-tests
+rector.php
 tests
 Thumbs.db
 wp-cli.local.yml
