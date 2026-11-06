@@ -7,8 +7,8 @@
  * Author: Sean Fisher
  * Author URI: https://github.com/alleyinteractive/wp-fatal-handler
  * Requires at least: 5.9
- * Requires PHP: 8.2
- * Tested up to: 6.7
+ * Requires PHP: 8.4
+ * Tested up to: 7.1
  *
  * @package wp-fatal-handler
  */
