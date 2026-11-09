@@ -4,13 +4,13 @@ Contributors: alleyinteractive
 
 Tags: alleyinteractive, wp-fatal-handler
 
-Stable tag: 0.1.3
+Stable tag: 0.2.0
 
 Requires at least: 6.3
 
-Tested up to: 6.7
+Tested up to: 7.1
 
-Requires PHP: 8.2
+Requires PHP: 8.3
 
 License: GPL v2 or later
 

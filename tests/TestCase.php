@@ -5,6 +5,8 @@
  * @package wp-fatal-handler
  */
 
+declare(strict_types=1);
+
 namespace Alley\WP\WP_Fatal_Error_Handler\Tests;
 
 use Mantle\Testkit\Test_Case as TestkitTest_Case;

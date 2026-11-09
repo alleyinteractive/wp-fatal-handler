@@ -5,6 +5,8 @@
  * @package wp-fatal-handler
  */
 
+declare(strict_types=1);
+
 namespace Alley\WP\WP_Fatal_Error_Handler\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
